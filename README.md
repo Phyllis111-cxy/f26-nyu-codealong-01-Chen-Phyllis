@@ -37,15 +37,6 @@ The script is linked in both `index.html` and `explore.html`. Because my project
 - Calendar shows sample stamps and a plan. It does not switch months or edit activities.
 - Collection and Map are still placeholders.
 
-## Course scope
-
-The current visual prototype includes Grid/Flexbox, images, and responsive styling added after the initial HTML structure. It is not a strict recreation of Assignment 5's normal-flow-only stage.
-
-This repository still has the classroom code-along name. The instructions ask for `f26-nyu-project-lastname-firstname`; the submission repository/name still needs to be resolved before treating this as fully checklist-compliant.
-
-## AI use
-
-ChatGPT helped write, simplify, and review the code and create the pigeon illustration. I chose the project idea and visual direction. I still need to practice explaining the JavaScript myself.
 
 ## Checking and submission
 
