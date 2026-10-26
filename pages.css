@@ -50,3 +50,7 @@
 /* Keep empty slots and date buttons at the same cell width. */
 .calendar-day,.calendar-blank{width:100%;height:clamp(64px,12vw,93px);aspect-ratio:auto}
 @media(max-width:360px){.calendar-day,.calendar-blank{height:59px}}
+
+/* Static calendar preview. */
+.month-controls>span{display:grid;place-items:center;width:37px;height:44px;font-size:38px;line-height:1}
+.calendar-day:hover{background:transparent}

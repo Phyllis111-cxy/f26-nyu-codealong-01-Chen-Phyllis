@@ -1,6 +1,0 @@
-/* Small additions for the simplified Assignment 6 version. */
-span.time-chip{display:inline-flex;align-items:center;justify-content:center}
-.preview-add{display:flex;align-items:center;justify-content:center;text-decoration:none}
-.month-controls>span{display:grid;place-items:center;width:37px;height:44px;font-size:38px;line-height:1}
-.calendar-day:hover{background:transparent}
-.quest-description{font-size:12px;line-height:1.5;color:var(--muted);margin:8px 0 0}

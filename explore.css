@@ -549,3 +549,8 @@ button:hover{
 
 
 .pigeon-doodle img {display:block; width:70px; height:62px}
+
+/* Shared preview elements and activity descriptions. */
+span.time-chip{display:inline-flex;align-items:center;justify-content:center}
+.preview-add{display:flex;align-items:center;justify-content:center;text-decoration:none}
+.quest-description{font-size:12px;line-height:1.5;color:var(--muted);margin:8px 0 0}
