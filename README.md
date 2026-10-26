@@ -119,13 +119,19 @@ This verification covers Chromium at the tested sizes; Safari and Firefox were n
 **Fixed today:**
 - Corrected the welcome page's “Let's explore” link to `explore.html` instead of `calendar.html`.
 - Corrected the `index.html` inventory to reflect the implemented hero and illustration placeholder; the original inventory listed a footer that was not in the HTML.
-- Checked that all four navigation destinations have matching HTML files, `explore.html` loads `script.js` with `defer`, and the eight referenced local SVG assets exist in `assets/`.
+**Verified in repository source:**
+- All four navigation destinations have corresponding HTML files.
+- `explore.html` references `script.js` with `defer`.
+- The eight referenced local SVG assets exist in `assets/`.
 
 **Still missing (building before the layout assignment):**
 - [ ] Replace the welcome taxi illustration placeholder with the intended artwork.
 - [ ] Implement the time-selection step between welcome and Explore from the design.
 - [ ] Build the Calendar monthly grid, Collection cards/stamps, and Map content beyond their present placeholders.
 - [ ] Compare the actual 1440px rendered page against the Assignment 4 PDF in DevTools and resolve remaining visual/content discrepancies.
+
+**One thing I couldn't figure out:**
+- I'm still figuring out how to make my Calendar and Collection pages match my original mockup while connecting JavaScript-generated activity cards across pages.
 
 **Audit scope:** This pass inspected repository source files and assets. Browser-computed fonts, console errors, and a partner's spot-check were not independently re-tested during this audit. The separate October 26 Assignment 6 Chromium checks are documented under Validation above.
 
