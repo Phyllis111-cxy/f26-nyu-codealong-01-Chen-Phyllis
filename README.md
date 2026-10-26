@@ -13,7 +13,7 @@ No build step, account, API key, or package installation is required.
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000/index.html`, then choose **Explore** in the navigation. To review Assignment 6 directly, open `http://localhost:8000/explore.html`. The HTML files can also be opened directly in a modern browser.
+Open `http://localhost:8000/index.html`, choose your available time, then select **Let’s explore**. **Skip** opens Explore with its remembered/default filters. To review Assignment 6 directly, open `http://localhost:8000/explore.html`. The HTML files can also be opened directly in a modern browser.
 
 **Repository for Canvas:** https://github.com/Phyllis111-cxy/f26-nyu-codealong-01-Chen-Phyllis
 
@@ -23,16 +23,16 @@ Open `http://localhost:8000/index.html`, then choose **Explore** in the navigati
 
 This is the existing Assignment 4 Figma file. The later cream-paper and glass-navigation visual references informed this week's Explore implementation; this update does not claim that the Figma frames have been updated.
 
-- Welcome page: brand yellow `#FFC83D`.
+- Welcome, Calendar, and Explore: the same warm-paper background `#F1EEE7` and existing Inter/system sans-serif stack. Yellow `#FFC83D` is an accent for selections and actions.
 - Content pages: warm paper `#F1EEE7`, with a separate repeating paper-grain SVG.
 - Explore cards: warm cream `#FCFAF5`; text `#171717`.
 - Explore bottom navigation: white at **35% opacity**, `backdrop-filter: blur(20px)`; the icons and text remain opaque. Order: Calendar → Explore → Collection → Map, plus a separate + button.
 - Explore grid: two columns below 700px, three columns from 700px; extra bottom padding lets the final cards scroll above the fixed navigation.
-- Illustrations are lightweight local SVG assets used for this prototype. They are not final watercolor artwork.
+- Explore illustrations remain the existing local SVG assets. Welcome and Calendar use a new transparent watercolor pigeon based on the supplied reference; the Calendar park/brownstone drawings remain prototype SVGs, and coffee/bagel stamps are lightweight local SVG illustrations.
 
 ## Assignment 5: HTML/CSS foundation
 
-The five linked pages use semantic header, navigation, main, and section elements, a shared external stylesheet, responsive desktop/mobile rules, and the yellow welcome screen. Assignment 6 builds on that foundation below. Calendar, Collection, and Map remain structural prototypes; this is not the full app shown in the long-term design. The complete original assignment rubrics were not available during this migration, so this README documents implemented concepts rather than claiming a rubric score.
+The five linked pages use semantic header, navigation, main, and section elements, a shared external stylesheet, responsive desktop/mobile rules, and the time-selection welcome screen. Assignment 6 builds on that foundation below. Collection and Map remain structural prototypes; Calendar now has a working month grid with explicit demo records; this is not the full app shown in the long-term design. The complete original assignment rubrics were not available during this migration, so this README documents implemented concepts rather than claiming a rubric score.
 
 ## Assignment 6: dynamic activity cards
 
@@ -65,7 +65,7 @@ The rendering sequence is:
 
 ## Weekly update
 
-**Key changes:** Integrated the Assignment 6 activity data and dynamic rendering into the existing `explore.html`. Kept the yellow welcome page and the original Calendar, Collection, and Map pages. Added the latest Explore styling in a separate stylesheet so its header, button, and navigation rules do not change the welcome page. Fixed a missing CSS media-query closing brace that had restricted secondary-page styles to mobile widths. Replaced the welcome page's broken Add Quest link with a working Find a Quest link to Explore.
+**Key changes:** Integrated the Assignment 6 activity data and dynamic rendering into the existing `explore.html`. Preserved the multipage structure; the later reference update replaces Welcome and Calendar as described below. Added the latest Explore styling in a separate stylesheet so its header, button, and navigation rules do not change the welcome page. Fixed a missing CSS media-query closing brace that had restricted secondary-page styles to mobile widths. Replaced the welcome page's broken Add Quest link with a working Find a Quest link to Explore.
 
 **Implementation challenges:** The generated draft used one HTML page with hash navigation, while last week's repository used five HTML files. The integration needed to retain those original URLs and avoid CSS selector collisions. Rerendering also needed to clear old cards without losing favorite state or duplicating results.
 
@@ -77,18 +77,20 @@ The rendering sequence is:
 
 ## Scope
 
-The Calendar, Collection, and Map retain last week's structure and placeholder content. The Calendar's four quests and three neighborhoods are demo text. Planning, adding a quest, completion stamps, live map navigation, accounts, and durable favorites are future features. The corresponding Explore controls display explicit demo feedback. No action silently marks a quest complete. Activity suggestions do not include live opening hours, travel time, ticket prices, or current service information.
+Collection and Map retain their placeholder content. Calendar now renders actual month dates with four sample completed memories across three neighborhoods and one sample plan in October 2026; other months show their own correct dates and counts. The greeting/date is a labeled demo profile matching the reference, not the live date. Planning, adding a quest, completion stamps, live map navigation, accounts, and durable favorites are future features. The corresponding Explore controls display explicit demo feedback. No action silently marks a quest complete. Activity suggestions do not include live opening hours, travel time, ticket prices, or current service information.
 
 ## Files
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Original yellow welcome page and existing navigation |
+| `index.html`, `welcome.js` | Reference-based time selection; passes the chosen time to Explore |
 | `explore.html` | Explore structure, filters, empty dynamic container, dialog, bottom navigation |
 | `script.js` | Activity data, filtering, card creation, favorites, dialog, session filter restoration |
 | `explore.css` | Explore-specific responsive layout and latest visual tokens |
 | `style.css` | Existing welcome and secondary-page styles, with media-query fix and paper background |
-| `calendar.html`, `collection.html`, `map.html` | Original secondary-page structures |
+| `calendar.html`, `calendar.js` | Monthly grid, month switching, demo stamps/plans, date details, computed summaries |
+| `pages.css` | Welcome/Calendar layouts; inherits Explore typography and design tokens |
+| `collection.html`, `map.html` | Secondary-page placeholders |
 | `assets/` | Local activity illustrations, pigeon icon, and paper grain |
 | `docs/course-setup.md` | Preserved original course-template setup instructions |
 
@@ -97,7 +99,7 @@ The Calendar, Collection, and Map retain last week's structure and placeholder c
 Verified on October 26, 2026 using headless Chromium and Playwright against a local HTTP server:
 
 - Tested all five HTML pages at **320, 390, 768, and 1440px**; no horizontal overflow and no broken local navigation links.
-- Confirmed the welcome page stays yellow and secondary-page styles apply on both desktop and mobile.
+- The original migration checked a yellow welcome page. The latest reference update now verifies warm paper on Welcome, Calendar, and Explore.
 - Checked all time options (2 / 5 / 6 / 3 / 6 matching cards), both companion options, See all, reset, and repeated rerendering without duplicates.
 - Checked save/unsave, favorite state during filtering, activity details, Escape to close, matching Surprise Me results, and explicit feedback for future features.
 - Verified the empty-result message with an isolated synthetic unmatched filter, and the no-JavaScript notice with scripting disabled.
@@ -110,9 +112,9 @@ This verification covers Chromium at the tested sizes; Safari and Firefox were n
 ## Structure Audit — October 26, 2026
 
 **Inventory (current implementation, top to bottom):**
-- Welcome: header/main navigation → hero headline and tagline → Explore CTA → taxi illustration placeholder.
+- Welcome: Back/Skip navigation → time question → duration/date options → watercolor pigeon → Let’s explore CTA.
 - Explore: header → introductory hero → free-time and companion filters → Surprise Me banner → dynamic activity cards → bottom navigation → quest-details dialog.
-- Calendar: header/navigation → introductory heading → monthly calendar placeholder → monthly summary.
+- Calendar: shared header → demo greeting → month controls and seven-column calendar → completed/planned legend → computed monthly summary → demo note → shared glass navigation → date dialog.
 - Collection: header/navigation → introductory heading → sticker collection placeholder → quest cards placeholder.
 - Map: header/navigation → introductory heading → map placeholder → visited locations placeholder.
 
@@ -125,15 +127,26 @@ This verification covers Chromium at the tested sizes; Safari and Firefox were n
 - The eight referenced local SVG assets exist in `assets/`.
 
 **Still missing (building before the layout assignment):**
-- [ ] Replace the welcome taxi illustration placeholder with the intended artwork.
-- [ ] Implement the time-selection step between welcome and Explore from the design.
-- [ ] Build the Calendar monthly grid, Collection cards/stamps, and Map content beyond their present placeholders.
+- [x] Replace the old welcome screen with the supplied time-selection reference and watercolor pigeon.
+- [x] Pass the welcome time selection into Explore’s existing filters.
+- [x] Build the Calendar monthly grid, month switching, sample stamps/plans, and date details.
+- [ ] Build Collection cards/stamps and Map content beyond placeholders.
 - [ ] Compare the actual 1440px rendered page against the Assignment 4 PDF in DevTools and resolve remaining visual/content discrepancies.
 
 **One thing I couldn't figure out:**
-- I'm still figuring out how to make my Calendar and Collection pages match my original mockup while connecting JavaScript-generated activity cards across pages.
+- I’m still figuring out how to connect planned and completed activity records across Calendar and Collection. Calendar currently uses explicit sample records.
 
 **Audit scope:** This pass inspected repository source files and assets. Browser-computed fonts, console errors, and a partner's spot-check were not independently re-tested during this audit. The separate October 26 Assignment 6 Chromium checks are documented under Validation above.
+
+## Welcome and Calendar reference update — October 26, 2026
+
+- Replaced the old yellow welcome/taxi placeholder with the supplied time-question design, selected chips, Back/Skip, watercolor pigeon, and yellow continue button.
+- Inherited `explore.css` unchanged: identical font stack, paper/grain, ink, yellow, and Calendar glass navigation (35% white, 20px blur). No webfont substitution was added.
+- Added a correctly aligned month grid, previous/next month controls including year rollover, clickable date details, demo completed stamps/planned rings, and counts computed from completed records.
+- An explicit welcome selection overrides the remembered Explore time; the companion filter remains intact. The initial query is consumed so later visits use current saved filters.
+- The Calendar plus button opens Explore; no demo action silently marks an activity completed. There is still no system-calendar sync, account system, or editing of calendar records.
+- AI assistance: ChatGPT implemented these changes and generated the transparent pigeon illustration from the supplied visual reference.
+- Browser verification: all five pages at 320/390/768/1440px; all five welcome options; Calendar weekday alignment, month lengths/year rollover, demo counts, date dialogs, navigation, computed shared fonts/background/texture and glass styles; reran Explore regression checks. No uncaught JavaScript or failed page/asset responses. Safari/Firefox remain untested.
 
 ## Submission
 

@@ -33,6 +33,14 @@ try {
     restoredScroll = Number.isFinite(previous.scroll) ? Math.max(0, previous.scroll) : 0;
   }
 } catch { /* Use the default filters if saved state is unavailable. */ }
+const onboardingTime = new URLSearchParams(window.location.search).get("time");
+if (timeButtons.some(button => button.dataset.time === onboardingTime)) {
+  selectedTime = onboardingTime;
+  showAll = false;
+  restoredScroll = 0;
+  // Consume the initial choice so later refresh/back uses the current filters.
+  try { history.replaceState(null, "", window.location.pathname + window.location.hash); } catch { /* URL cleanup is optional. */ }
+}
 window.addEventListener("pagehide", () => {
   try {
     sessionStorage.setItem(filterStateKey, JSON.stringify({

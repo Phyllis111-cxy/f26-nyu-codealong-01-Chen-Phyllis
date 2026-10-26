@@ -1,87 +1,10 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NYC Side Quest | Welcome</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- START BELOW -->
-     
-
-   
-<!--
-SECTION INVENTORY
-1. Header and Navigation
-2. Welcome Hero (headline, tagline, primary Explore CTA)
-3. Taxi Illustration Placeholder
-Note: A footer is not implemented in this version.
--->
-
-<!-- HEADER -->
-<header class="site-header">
-  <nav class="navigation" aria-label="Main navigation">
-
-    <!-- LOGO -->
-    <a class="logo" href="index.html">
-      NYC<br>SIDE QUEST
-    </a>
-
-    <!-- DESKTOP NAVIGATION -->
-    <div class="desktop-nav">
-      <a href="explore.html">Explore</a>
-      <a href="calendar.html">Calendar</a>
-      <a href="collection.html">Collection</a>
-      <a href="map.html">Map</a>
-    </div>
-
-    <!-- DESKTOP ADD BUTTON -->
-    <a class="add-button" href="explore.html">
-      + Find a Quest
-    </a>
-
-    <!-- MOBILE SKIP -->
-    <a class="mobile-skip" href="calendar.html">
-      Skip
-    </a>
-
-  </nav>
-</header>
-
-<!-- WELCOME PAGE -->
-<main>
-  <section class="welcome">
-
-    <!-- HEADLINE -->
-    <div class="welcome-content">
-
-      <h1>
-        Got a<br>little time?
-      </h1>
-
-      <p class="handwritten">
-        Take a side quest.
-      </p>
-
-      <!-- EXPLORE BUTTON -->
-      <a class="explore-button" href="explore.html">
-        <span class="arrow">&rarr;</span>
-        <span class="explore-label">Let's explore</span>
-      </a>
-
-    </div>
-
-    <!-- TAXI ILLUSTRATION AREA -->
-    <div class="taxi-area" aria-label="NYC taxi illustration placeholder">
-      <p>NYC TAXI</p>
-      <small>Illustration coming soon</small>
-    </div>
-
-  </section>
-</main>
-
-
-
-  </body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#F1EEE7"><title>Your free time | NYC Side Quest</title><link rel="stylesheet" href="explore.css"><link rel="stylesheet" href="pages.css"><script src="welcome.js" defer></script></head>
+<body class="welcome-page"><main class="onboarding paper-panel" aria-labelledby="welcome-title">
+<nav class="onboarding-nav" aria-label="Welcome navigation"><a href="calendar.html" aria-label="Go to calendar" class="back-link">←</a><a href="explore.html">Skip</a></nav>
+<p class="eyebrow">NYC SIDE QUEST</p><h1 id="welcome-title">How much time<br>do you have?</h1>
+<div class="onboarding-options" role="group" aria-label="Available duration"><button type="button" class="time-chip" data-choice="60" aria-pressed="false">1 hour</button><button type="button" class="time-chip is-selected" data-choice="120" aria-pressed="true">2 hours</button><button type="button" class="time-chip" data-choice="240" aria-pressed="false">Half a day</button></div>
+<p class="plan-ahead">Or plan ahead</p><div class="onboarding-options date-options" role="group" aria-label="Plan ahead"><button type="button" class="time-chip" data-choice="tonight" aria-pressed="false">Tonight</button><button type="button" class="time-chip" data-choice="weekend" aria-pressed="false">This weekend</button></div>
+<div class="welcome-art"><img src="assets/pigeon-watercolor.png" alt="A curious watercolor NYC pigeon" width="768" height="1024"></div>
+<a class="welcome-continue" id="welcome-continue" href="explore.html?time=120">Let’s explore <span aria-hidden="true">→</span></a>
+<noscript><p>Choose Let’s explore to browse two-hour activities, or Skip to use Explore’s filters.</p></noscript></main></body></html>
