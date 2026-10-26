@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#F1EEE7">
   <meta name="description" content="Find a NYC side quest that fits your free time.">
   <title>Explore | NYC Side Quest</title>
-  <link rel="stylesheet" href="explore.css">
+  <link rel="stylesheet" href="explore.css"><link rel="stylesheet" href="assignment6.css">
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
   <div class="app-shell">
     <header class="site-header">
       <a href="index.html" class="wordmark" aria-label="NYC Side Quest home">NYC SIDE QUEST<span class="rays" aria-hidden="true">✳</span></a>
-      <button class="settings-button" type="button" aria-label="About this demo" id="settings-button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M9.8 2.5h4.4l.6 2.3 1.9 1.1 2.3-.6 2.2 3.8-1.7 1.8v2.2l1.7 1.8-2.2 3.8-2.3-.6-1.9 1.1-.6 2.3H9.8l-.6-2.3-1.9-1.1-2.3.6-2.2-3.8 1.7-1.8v-2.2L2.8 9.1 5 5.3l2.3.6 1.9-1.1z"/></svg></button>
+      <span class="settings-button" aria-hidden="true">⚙</span>
     </header>
     <main id="main-content">
       <section class="page" id="page-explore" data-page="explore" aria-labelledby="explore-title">
@@ -22,23 +22,22 @@
         <section class="filter-panel paper-panel" aria-labelledby="free-time-heading">
           <h2 class="eyebrow" id="free-time-heading">YOUR FREE TIME</h2>
           <div class="time-buttons" id="time-buttons" role="group" aria-label="Available time">
-            <button type="button" class="time-chip" data-time="60">1 hour</button>
-            <button type="button" class="time-chip is-selected" data-time="120" aria-pressed="true">2 hours</button>
-            <button type="button" class="time-chip" data-time="240">Half a day</button>
-            <button type="button" class="time-chip" data-time="tonight">Tonight</button>
-            <button type="button" class="time-chip" data-time="weekend">This weekend</button>
+            <span class="time-chip">1 hour</span>
+            <span class="time-chip is-selected">2 hours</span>
+            <span class="time-chip">Half a day</span>
+            <span class="time-chip">Tonight</span>
+            <span class="time-chip">This weekend</span>
           </div>
-          <div class="filter-footer"><label class="people-filter"><span aria-hidden="true">♧</span><span class="sr-only">Companions</span><select id="companion-select"><option value="any">Solo / With friends</option><option value="solo">Solo</option><option value="friends">With friends</option></select></label><button class="more-filter-button" type="button" id="reset-filters"><span aria-hidden="true">☷</span> Reset filters</button></div>
+          <div class="filter-footer"><span class="people-filter">Solo / With friends</span><span class="more-filter-button">Filters coming later</span></div>
         </section>
-        <section class="surprise-banner" aria-labelledby="surprise-heading"><div><span class="eyebrow">FEELING LUCKY?</span><h2 id="surprise-heading">Surprise Me!</h2><p>Get a random side quest<br>for your free time.</p><button type="button" class="arrow-disc" id="surprise-button" aria-label="Surprise me with a random matching quest">➜</button></div><div class="tarot-fan" aria-hidden="true"><span class="tarot tarot-one">✦</span><span class="tarot tarot-two">✧</span><span class="tarot tarot-three">✺</span></div></section>
-        <div class="section-heading"><h2>Made for your time</h2><button type="button" id="show-all-button">See all →</button></div>
+        <section class="surprise-banner" aria-labelledby="surprise-heading"><div><span class="eyebrow">FEELING LUCKY?</span><h2 id="surprise-heading">Surprise Me!</h2><p>Get a random side quest<br>for your free time.</p><span class="arrow-disc" aria-hidden="true">➜</span></div><div class="tarot-fan" aria-hidden="true"><span class="tarot tarot-one">✦</span><span class="tarot tarot-two">✧</span><span class="tarot tarot-three">✺</span></div></section>
+        <div class="section-heading"><h2>Little adventures to try</h2><span class="demo-note">6 activities</span></div>
         <!-- ASSIGNMENT 6: cards below are generated in JavaScript, not hardcoded in HTML. -->
-        <p class="demo-note">Activity suggestions are demo data. Travel time and current opening hours are not included.</p>
+        <p class="demo-note">All six activity cards are generated with JavaScript. Filters and Surprise Me are design previews for a future update.</p>
         <div class="quest-grid" id="quest-container" aria-live="polite"></div>
-        <p id="empty-state" class="empty-state" hidden>No quests match these filters. Try another time or reset filters.</p>
       </section>
 
-      <noscript><p>Enable JavaScript to see and filter the activity cards. You can still use the page navigation.</p></noscript>
+      <noscript><p>Enable JavaScript to see the activity cards. You can still use the page navigation.</p></noscript>
     </main>
   </div>
   <nav class="bottom-bar" aria-label="Main navigation"><div class="bottom-nav">
@@ -46,8 +45,6 @@
     <a href="explore.html" data-route="explore" class="nav-link is-active" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.8 8.2-2.4 5.2-5.2 2.4 2.4-5.2z"/></svg><span>Explore</span></a>
     <a href="collection.html" data-route="collection" class="nav-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M8 20v-5l-2-3c-1.5-2.6 1.2-4.5 3.5-3 1.2 1 1.5 2.2 2.5 2.2s1.3-1.2 2.5-2.2c2.3-1.5 5 .4 3.5 3l-2 3v5M6 17h12"/></svg><span>Collection</span></a>
     <a href="map.html" data-route="map" class="nav-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15"/></svg><span>Map</span></a>
-  </div><button id="add-button" class="add-button" type="button" aria-label="Add a quest">+</button></nav>
-  <dialog id="quest-dialog" class="quest-dialog" aria-labelledby="quest-dialog-title"><button type="button" class="dialog-close" id="dialog-close" aria-label="Close">×</button><div id="dialog-content"></div></dialog>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div><a href="explore.html" class="add-button preview-add" aria-label="Browse activities">+</a></nav>
 </body>
 </html>

@@ -1,22 +1,54 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#F1EEE7"><title>Calendar | NYC Side Quest</title><link rel="stylesheet" href="explore.css"><link rel="stylesheet" href="pages.css"><script src="calendar.js" defer></script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#F1EEE7"><title>Calendar | NYC Side Quest</title><link rel="stylesheet" href="explore.css"><link rel="stylesheet" href="pages.css"><link rel="stylesheet" href="assignment6.css"></head>
 <body><a class="skip-link" href="#main-content">Skip to calendar</a><div class="app-shell calendar-shell">    <header class="site-header">
       <a href="index.html" class="wordmark" aria-label="NYC Side Quest home">NYC SIDE QUEST<span class="rays" aria-hidden="true">✳</span></a>
-      <button class="settings-button" type="button" aria-label="About this demo" id="settings-button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M9.8 2.5h4.4l.6 2.3 1.9 1.1 2.3-.6 2.2 3.8-1.7 1.8v2.2l1.7 1.8-2.2 3.8-2.3-.6-1.9 1.1-.6 2.3H9.8l-.6-2.3-1.9-1.1-2.3.6-2.2-3.8 1.7-1.8v-2.2L2.8 9.1 5 5.3l2.3.6 1.9-1.1z"/></svg></button>
+      <span class="settings-button" aria-hidden="true">⚙</span>
     </header>
 
 <main id="main-content" class="page calendar-page">
+<!-- GREETING -->
 <section class="calendar-intro" aria-labelledby="calendar-title"><div><h1 id="calendar-title">Hi, Phyllis</h1><span class="small-scribble" aria-hidden="true"></span><p>Tuesday, October 20</p></div><img src="assets/pigeon-watercolor.png" width="100" height="130" alt="" class="calendar-pigeon"></section>
-<section class="calendar-panel paper-panel" aria-labelledby="month-label"><div class="month-heading"><h2 id="month-label" aria-live="polite"></h2><div class="month-controls"><button type="button" id="previous-month" aria-label="Previous month">‹</button><button type="button" id="next-month" aria-label="Next month">›</button></div></div>
-<div class="calendar-weekdays" aria-hidden="true"><span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span></div><div class="calendar-grid" id="calendar-grid" role="group" aria-label="Calendar dates"></div>
-<div class="calendar-legend"><span><img src="assets/pigeon-watercolor.png" width="30" height="38" alt=""> Completed</span><span><i class="planned-ring" aria-hidden="true"></i> Planned</span></div><noscript><p>Enable JavaScript to browse the monthly calendar.</p></noscript></section>
+<section class="calendar-panel paper-panel" aria-labelledby="month-label"><div class="month-heading"><h2 id="month-label">OCTOBER <span class="calendar-year">2026</span></h2><div class="month-controls" aria-hidden="true"><span>‹</span><span>›</span></div></div>
+<div class="calendar-weekdays" aria-hidden="true"><span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span></div><!-- STATIC OCTOBER CALENDAR -->
+<div class="calendar-grid" id="calendar-grid" role="group" aria-label="October 2026 calendar"><div class="calendar-blank" aria-hidden="true"></div><div class="calendar-blank" aria-hidden="true"></div><div class="calendar-blank" aria-hidden="true"></div><div class="calendar-blank" aria-hidden="true"></div><div class="calendar-day"><span class="day-number">1</span></div>
+<div class="calendar-day"><span class="day-number">2</span></div>
+<div class="calendar-day"><span class="day-number">3</span></div>
+<div class="calendar-day"><span class="day-number">4</span><img class="calendar-stamp" src="assets/coffee.svg" alt="Completed: Coffee break"></div>
+<div class="calendar-day"><span class="day-number">5</span></div>
+<div class="calendar-day"><span class="day-number">6</span></div>
+<div class="calendar-day"><span class="day-number">7</span></div>
+<div class="calendar-day"><span class="day-number">8</span></div>
+<div class="calendar-day"><span class="day-number">9</span></div>
+<div class="calendar-day"><span class="day-number">10</span><img class="calendar-stamp" src="assets/bagel.svg" alt="Completed: Bagel morning"></div>
+<div class="calendar-day"><span class="day-number">11</span></div>
+<div class="calendar-day"><span class="day-number">12</span></div>
+<div class="calendar-day"><span class="day-number">13</span></div>
+<div class="calendar-day"><span class="day-number">14</span></div>
+<div class="calendar-day"><span class="day-number">15</span></div>
+<div class="calendar-day"><span class="day-number">16</span></div>
+<div class="calendar-day"><span class="day-number">17</span><img class="calendar-stamp" src="assets/park.svg" alt="Completed: Central Park"></div>
+<div class="calendar-day"><span class="day-number">18</span></div>
+<div class="calendar-day"><span class="day-number">19</span></div>
+<div class="calendar-day"><span class="day-number demo-today">20</span><img class="calendar-stamp" src="assets/pigeon-watercolor.png" alt="Completed: West Village walk"></div>
+<div class="calendar-day"><span class="day-number">21</span></div>
+<div class="calendar-day"><span class="day-number">22</span></div>
+<div class="calendar-day"><span class="day-number">23</span></div>
+<div class="calendar-day"><span class="day-number">24</span><span class="planned-ring" role="img" aria-label="Planned adventure"></span></div>
+<div class="calendar-day"><span class="day-number">25</span></div>
+<div class="calendar-day"><span class="day-number">26</span></div>
+<div class="calendar-day"><span class="day-number">27</span></div>
+<div class="calendar-day"><span class="day-number">28</span></div>
+<div class="calendar-day"><span class="day-number">29</span></div>
+<div class="calendar-day"><span class="day-number">30</span></div>
+<div class="calendar-day"><span class="day-number">31</span></div>
+</div>
+<div class="calendar-legend"><span><img src="assets/pigeon-watercolor.png" width="30" height="38" alt=""> Completed</span><span><i class="planned-ring" aria-hidden="true"></i> Planned</span></div></section>
+<!-- MONTHLY SUMMARY -->
 <section class="month-summary paper-panel" aria-labelledby="summary-heading"><div><h2 class="eyebrow" id="summary-heading">THIS MONTH</h2><p class="summary-count"><strong id="quest-count">4</strong> side quests</p><p id="neighborhood-count">3 neighborhoods explored</p></div><img src="assets/village.svg" width="160" height="130" alt="Illustrated NYC brownstones"></section>
-<p class="demo-note">Demo profile and sample memories · October 2026. Stamps show completed adventures; rings show plans. These are separate from Explore favorites.</p>
+<p class="demo-note">Static calendar design preview · October 2026. Stamps show four sample completed adventures; the ring shows a sample plan. Month switching and editing will come later.</p>
 </main></div>  <nav class="bottom-bar" aria-label="Main navigation"><div class="bottom-nav">
     <a href="calendar.html" data-route="calendar" class="nav-link is-active" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 14h3M8 18h3M14 14h3"/></svg><span>Calendar</span></a>
     <a href="explore.html" data-route="explore" class="nav-link"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.8 8.2-2.4 5.2-5.2 2.4 2.4-5.2z"/></svg><span>Explore</span></a>
     <a href="collection.html" data-route="collection" class="nav-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M8 20v-5l-2-3c-1.5-2.6 1.2-4.5 3.5-3 1.2 1 1.5 2.2 2.5 2.2s1.3-1.2 2.5-2.2c2.3-1.5 5 .4 3.5 3l-2 3v5M6 17h12"/></svg><span>Collection</span></a>
     <a href="map.html" data-route="map" class="nav-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15"/></svg><span>Map</span></a>
-  </div><button id="add-button" class="add-button" type="button" aria-label="Add a quest">+</button></nav>
-
-<dialog class="quest-dialog" id="calendar-dialog" aria-labelledby="day-title"><button type="button" class="dialog-close" id="close-day" aria-label="Close">×</button><div id="day-content"></div></dialog><div class="toast" id="toast" role="status" aria-live="polite"></div></body></html>
+  </div><a href="explore.html" class="add-button preview-add" aria-label="Browse activities">+</a></nav></body></html>
