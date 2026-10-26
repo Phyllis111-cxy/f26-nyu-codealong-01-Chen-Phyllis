@@ -107,6 +107,31 @@ Verified on October 26, 2026 using headless Chromium and Playwright against a lo
 
 This verification covers Chromium at the tested sizes; Safari and Firefox were not tested.
 
+## Structure Audit — October 26, 2026
+
+**Inventory (current implementation, top to bottom):**
+- Welcome: header/main navigation → hero headline and tagline → Explore CTA → taxi illustration placeholder.
+- Explore: header → introductory hero → free-time and companion filters → Surprise Me banner → dynamic activity cards → bottom navigation → quest-details dialog.
+- Calendar: header/navigation → introductory heading → monthly calendar placeholder → monthly summary.
+- Collection: header/navigation → introductory heading → sticker collection placeholder → quest cards placeholder.
+- Map: header/navigation → introductory heading → map placeholder → visited locations placeholder.
+
+**Fixed today:**
+- Corrected the welcome page's “Let's explore” link to `explore.html` instead of `calendar.html`.
+- Corrected the `index.html` inventory to reflect the implemented hero and illustration placeholder; the original inventory listed a footer that was not in the HTML.
+- Checked that all four navigation destinations have matching HTML files, `explore.html` loads `script.js` with `defer`, and the eight referenced local SVG assets exist in `assets/`.
+
+**Still missing (building before the layout assignment):**
+- [ ] Replace the welcome taxi illustration placeholder with the intended artwork.
+- [ ] Implement the time-selection step between welcome and Explore from the design.
+- [ ] Build the Calendar monthly grid, Collection cards/stamps, and Map content beyond their present placeholders.
+- [ ] Compare the actual 1440px rendered page against the Assignment 4 PDF in DevTools and resolve remaining visual/content discrepancies.
+
+**One thing I couldn't figure out:**
+- Whether the latest revised Figma frames supersede every section in the original Assignment 4 PDF. The repository code and design notes alone cannot establish that; a final visual spot-check against the submitted PDF is still needed.
+
+**Audit scope:** This pass inspected repository source files and assets. Browser-computed fonts, console errors, and a partner's spot-check were not independently re-tested during this audit. The separate October 26 Assignment 6 Chromium checks are documented under Validation above.
+
 ## Submission
 
 Commit and push this existing repository, then submit its **GitHub Repository URL** to Canvas. Use the repository URL above, rather than a Codespaces URL or a local preview address.
