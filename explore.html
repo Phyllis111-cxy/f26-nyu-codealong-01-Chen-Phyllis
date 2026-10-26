@@ -17,22 +17,22 @@
     </header>
     <main id="main-content">
       <section class="page" id="page-explore" data-page="explore" aria-labelledby="explore-title">
-        <div class="explore-intro"><div><h1 id="explore-title">Where to next?</h1><p>Your next little adventure starts here.</p><span class="small-scribble" aria-hidden="true"></span></div><div class="pigeon-doodle"><img src="assets/pigeon.svg" width="70" height="62" alt="NYC pigeon"><span>same city,<br>new stories.</span></div></div>
+        <div class="explore-intro"><div><h1 id="explore-title">Where to next?</h1><p>Your next little adventure starts here.</p><span class="small-scribble" aria-hidden="true"></span></div></div>
         <section class="filter-panel paper-panel" aria-labelledby="free-time-heading">
           <h2 class="eyebrow" id="free-time-heading">YOUR FREE TIME</h2>
           <div class="time-buttons" id="time-buttons" role="group" aria-label="Available time">
-            <span class="time-chip">1 hour</span>
-            <span class="time-chip is-selected">2 hours</span>
-            <span class="time-chip">Half a day</span>
-            <span class="time-chip">Tonight</span>
-            <span class="time-chip">This weekend</span>
+            <span class="time-chip" aria-disabled="true">1 hour</span>
+            <span class="time-chip is-selected" aria-disabled="true">2 hours</span>
+            <span class="time-chip" aria-disabled="true">Half a day</span>
+            <span class="time-chip" aria-disabled="true">Tonight</span>
+            <span class="time-chip" aria-disabled="true">This weekend</span>
           </div>
-          <div class="filter-footer"><span class="people-filter">Solo / With friends</span><span class="more-filter-button">Filters coming later</span></div>
+          <div class="filter-footer"><span class="people-filter">Solo / With friends</span></div>
         </section>
-        <section class="surprise-banner" aria-labelledby="surprise-heading"><div><span class="eyebrow">FEELING LUCKY?</span><h2 id="surprise-heading">Surprise Me!</h2><p>Get a random side quest<br>for your free time.</p><span class="arrow-disc" aria-hidden="true">➜</span></div><div class="tarot-fan" aria-hidden="true"><span class="tarot tarot-one">✦</span><span class="tarot tarot-two">✧</span><span class="tarot tarot-three">✺</span></div></section>
-        <div class="section-heading"><h2>Little adventures to try</h2><span class="demo-note">6 activities</span></div>
+        <section class="surprise-banner" aria-labelledby="surprise-heading"><div><span class="eyebrow">FEELING LUCKY?</span><h2 id="surprise-heading">Surprise Me!</h2><p>Get a random side quest<br>for your free time.</p><span class="arrow-disc" aria-hidden="true">➜</span></div></section>
+        <div class="section-heading"><h2>Little adventures to try</h2><span class="activity-count">6 activities</span></div>
         <!-- ASSIGNMENT 6: cards below are generated in JavaScript, not hardcoded in HTML. -->
-        <p class="demo-note">All six activity cards are generated with JavaScript. Filters and Surprise Me are design previews for a future update.</p>
+
         <div class="quest-grid" id="quest-container" aria-live="polite"></div>
       </section>
 
@@ -42,8 +42,8 @@
   <nav class="bottom-bar" aria-label="Main navigation"><div class="bottom-nav">
     <a href="calendar.html" data-route="calendar" class="nav-link"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 14h3M8 18h3M14 14h3"/></svg><span>Calendar</span></a>
     <a href="explore.html" data-route="explore" class="nav-link is-active" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.8 8.2-2.4 5.2-5.2 2.4 2.4-5.2z"/></svg><span>Explore</span></a>
-    <a href="collection.html" data-route="collection" class="nav-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M8 20v-5l-2-3c-1.5-2.6 1.2-4.5 3.5-3 1.2 1 1.5 2.2 2.5 2.2s1.3-1.2 2.5-2.2c2.3-1.5 5 .4 3.5 3l-2 3v5M6 17h12"/></svg><span>Collection</span></a>
-    <a href="map.html" data-route="map" class="nav-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15"/></svg><span>Map</span></a>
-  </div><a href="explore.html" class="add-button preview-add" aria-label="Browse activities">+</a></nav>
+    <span data-route="collection" class="nav-link" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M8 20v-5l-2-3c-1.5-2.6 1.2-4.5 3.5-3 1.2 1 1.5 2.2 2.5 2.2s1.3-1.2 2.5-2.2c2.3-1.5 5 .4 3.5 3l-2 3v5M6 17h12"/></svg><span>Collection</span></span>
+    <span data-route="map" class="nav-link" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15"/></svg><span>Map</span></span>
+  </div><span class="add-button preview-add" aria-disabled="true">+</span></nav>
 </body>
 </html>

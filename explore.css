@@ -554,3 +554,10 @@ button:hover{
 span.time-chip{display:inline-flex;align-items:center;justify-content:center}
 .preview-add{display:flex;align-items:center;justify-content:center;text-decoration:none}
 .quest-description{font-size:12px;line-height:1.5;color:var(--muted);margin:8px 0 0}
+
+/* Text-only cards and inactive future navigation. */
+.quest-text .category-sticker{position:static;display:inline-block;transform:none;margin:0 0 12px;font-size:9px}
+.quest-text{padding:18px 14px}
+[aria-disabled="true"],.calendar-day,.month-controls>span,.arrow-disc{cursor:default}
+.activity-count{font-size:12px;color:var(--muted)}
+.activity-count{white-space:nowrap}

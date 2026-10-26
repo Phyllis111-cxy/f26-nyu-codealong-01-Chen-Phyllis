@@ -4,43 +4,37 @@ const quests = [
     "title": "Roosevelt Island Tram",
     "duration": 60,
     "category": "Scenic",
-    "description": "See the city from above on the iconic red tram.",
-    "image": "assets/tram.svg"
+    "description": "See the city from above on the iconic red tram."
   },
   {
     "title": "Explore DUMBO",
     "duration": 120,
     "category": "Photography",
-    "description": "Walk beneath the Manhattan Bridge and discover picture-perfect streets.",
-    "image": "assets/dumbo.svg"
+    "description": "Walk beneath the Manhattan Bridge and discover picture-perfect streets."
   },
   {
     "title": "Central Park Picnic",
     "duration": 120,
     "category": "Relaxing",
-    "description": "Bring a snack and take a breather in the park.",
-    "image": "assets/park.svg"
+    "description": "Bring a snack and take a breather in the park."
   },
   {
     "title": "Chinatown Food Hunt",
     "duration": 120,
     "category": "Food",
-    "description": "Find dumplings, bakeries, and bright streets in Chinatown.",
-    "image": "assets/chinatown.svg"
+    "description": "Find dumplings, bakeries, and bright streets in Chinatown."
   },
   {
     "title": "West Village Walk",
     "duration": 60,
     "category": "Exploration",
-    "description": "Wander past brownstones, little shops, and leafy corners.",
-    "image": "assets/village.svg"
+    "description": "Wander past brownstones, little shops, and leafy corners."
   },
   {
     "title": "Brooklyn Bridge Stroll",
     "duration": 180,
     "category": "Outdoor",
-    "description": "Cross the bridge for skyline views and a mini adventure.",
-    "image": "assets/bridge.svg"
+    "description": "Cross the bridge for skyline views and a mini adventure."
   }
 ];
 
@@ -54,13 +48,6 @@ if (container) {
     // 1. Create the card and its content.
     const card = document.createElement("article");
     card.className = "quest-card";
-    const imageArea = document.createElement("div");
-    imageArea.className = "quest-image";
-    const image = document.createElement("img");
-    image.src = quest.image;
-    image.alt = "Illustration of " + quest.title;
-    image.width = 640;
-    image.height = 480;
     const category = document.createElement("span");
     category.className = "category-sticker";
     category.textContent = quest.category;
@@ -77,12 +64,10 @@ if (container) {
     description.textContent = quest.description;
 
     // 2. Put the content into the card.
-    imageArea.appendChild(image);
-    imageArea.appendChild(category);
+    copy.appendChild(category);
     copy.appendChild(title);
     copy.appendChild(duration);
     copy.appendChild(description);
-    card.appendChild(imageArea);
     card.appendChild(copy);
 
     // 3. Put the finished card into the page.
