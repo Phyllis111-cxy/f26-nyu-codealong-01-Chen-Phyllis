@@ -127,9 +127,6 @@ This verification covers Chromium at the tested sizes; Safari and Firefox were n
 - [ ] Build the Calendar monthly grid, Collection cards/stamps, and Map content beyond their present placeholders.
 - [ ] Compare the actual 1440px rendered page against the Assignment 4 PDF in DevTools and resolve remaining visual/content discrepancies.
 
-**One thing I couldn't figure out:**
-- Whether the latest revised Figma frames supersede every section in the original Assignment 4 PDF. The repository code and design notes alone cannot establish that; a final visual spot-check against the submitted PDF is still needed.
-
 **Audit scope:** This pass inspected repository source files and assets. Browser-computed fonts, console errors, and a partner's spot-check were not independently re-tested during this audit. The separate October 26 Assignment 6 Chromium checks are documented under Validation above.
 
 ## Submission
