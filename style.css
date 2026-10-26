@@ -1,0 +1,424 @@
+/* === RESET === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* START BELOW */
+
+
+/* =====================================
+   NYC SIDE QUEST - WELCOME PAGE
+   Assignment 5
+   ===================================== */
+
+/* DESIGN TOKENS */
+:root {
+  --yellow: #FFC83D;
+  --black: #141414;
+  --cream: #FFF9EF;
+}
+
+/* BASE */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--yellow);
+  color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+/* =====================================
+   DESKTOP HEADER
+   ===================================== */
+
+.site-header {
+  padding: 32px 5% 16px;
+  background: var(--yellow);
+}
+
+.navigation {
+  position: relative;
+  min-height: 75px;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -1px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.desktop-nav {
+  display: inline-block;
+  margin-left: 8%;
+  vertical-align: middle;
+}
+
+.desktop-nav a {
+  display: inline-block;
+  margin-right: 32px;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.desktop-nav a:hover {
+  text-decoration: underline;
+}
+
+.add-button {
+  float: right;
+  background: var(--black);
+  color: white;
+  border-radius: 40px;
+  padding: 14px 26px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.mobile-skip {
+  display: none;
+}
+
+/* =====================================
+   DESKTOP HERO
+   ===================================== */
+
+.welcome {
+  position: relative;
+  padding: 64px 5% 64px;
+  min-height: calc(100vh - 125px);
+}
+
+.welcome-content {
+  display: inline-block;
+  width: 55%;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome h1 {
+  font-size: clamp(60px, 7.8vw, 124px);
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: -4px;
+  margin: 0 0 16px;
+}
+
+.handwritten {
+  font-family: "Brush Script MT", cursive;
+  font-style: italic;
+  font-size: clamp(35px, 4.7vw, 76px);
+  line-height: 1.15;
+  margin: 0 0 64px;
+}
+
+/* EXPLORE BUTTON */
+
+.explore-button {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--black);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.arrow {
+  display: inline-block;
+  width: 78px;
+  height: 78px;
+  line-height: 73px;
+  text-align: center;
+  background: var(--cream);
+  border-radius: 50%;
+  font-size: 48px;
+  font-weight: normal;
+  vertical-align: middle;
+  margin-right: 18px;
+}
+
+.explore-label {
+  vertical-align: middle;
+}
+
+/* TAXI PLACEHOLDER */
+
+.taxi-area {
+  display: inline-block;
+  width: 40%;
+  min-height: 260px;
+  padding: 100px 16px;
+  vertical-align: middle;
+  text-align: center;
+  border: 2px dashed rgba(20,20,20,0.3);
+  border-radius: 24px;
+}
+
+.taxi-area p {
+  font-size: 34px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.taxi-area small {
+  font-size: 14px;
+}
+
+
+/* =====================================
+   SMALL DESKTOP / TABLET
+   ===================================== */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+  .desktop-nav {
+    margin-left: 3%;
+  }
+
+  .desktop-nav a {
+    margin-right: 12px;
+    font-size: 14px;
+  }
+
+  .add-button {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .welcome-content {
+    width: 57%;
+  }
+
+  .taxi-area {
+    width: 37%;
+  }
+}
+
+/* =====================================
+   MOBILE WELCOME PAGE
+   ===================================== */
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+
+  .site-header {
+    padding: 24px 6% 0;
+  }
+
+  .navigation {
+    min-height: 55px;
+  }
+
+  .logo {
+    font-size: 18px;
+    line-height: 0.9;
+  }
+
+  .desktop-nav,
+  .add-button {
+    display: none;
+  }
+
+  .mobile-skip {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  /* HERO */
+
+  .welcome {
+    padding: 18px 6% 28px;
+    min-height: calc(100svh - 100px);
+  }
+
+  .welcome-content {
+    display: block;
+    width: 100%;
+    position: static;
+  }
+
+  .welcome h1 {
+    font-size: clamp(44px, 12.5vw, 72px);
+    line-height: 0.94;
+    letter-spacing: -2px;
+    margin: 0 0 12px;
+  }
+
+  .handwritten {
+    font-size: clamp(30px, 8vw, 45px);
+    line-height: 1.1;
+    margin: 0 0 20px;
+  }
+
+  /* TAXI AREA */
+
+  .taxi-area {
+    display: block;
+    width: 90%;
+    min-height: 180px;
+    padding: 60px 12px;
+    margin: 26px auto 0;
+    border-radius: 16px;
+  }
+
+  .taxi-area p {
+    font-size: 23px;
+  }
+
+  .taxi-area small {
+    font-size: 12px;
+  }
+
+  /* BUTTON */
+
+  .explore-button {
+    position: absolute;
+    left: 6%;
+    bottom: 22px;
+    font-size: 18px;
+  }
+
+  .arrow {
+    width: 58px;
+    height: 58px;
+    line-height: 54px;
+    font-size: 36px;
+    margin-right: 0;
+  }
+
+  .explore-label {
+    display: none;
+  }
+
+
+
+} /* End mobile welcome styles. */
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 360px) {
+  .welcome h1 {
+    font-size: 44px;
+  }
+
+  .handwritten {
+    font-size: 29px;
+  }
+
+  .taxi-area {
+    min-height: 140px;
+    padding: 42px 12px;
+    margin-top: 18px;
+  }
+}
+
+    /* ===================================
+      SECONDARY APP PAGES
+      =================================== */
+
+    .app-page {
+      background-color: #F1EEE7;
+      background-image: url("assets/paper-grain.svg");
+      background-size: 280px 280px;
+      color: #171717;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .app-header {
+      background-color: #FFC83D;
+      padding: 24px 5%;
+      border-bottom: 2px solid #171717;
+    }
+
+    .app-header nav a {
+      display: inline-block;
+      color: #171717;
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 24px;
+      padding: 8px 0;
+    }
+
+    .app-main {
+      padding: 40px 6%;
+    }
+
+    .app-main section {
+      background-color: #FFFCF5;
+      padding: 32px;
+      margin-bottom: 24px;
+      border: 1px solid #D8CBB8;
+      border-radius: 20px;
+    }
+
+    .app-main h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .app-main h2 {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    .app-main p {
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .app-main button {
+      background-color: #FFC83D;
+      color: #171717;
+      border: 1px solid #171717;
+      border-radius: 20px;
+      padding: 12px 18px;
+      margin: 8px 8px 8px 0;
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .app-header {
+        padding: 16px 6%;
+      }
+
+      .app-header nav a {
+        font-size: 13px;
+        margin-right: 12px;
+      }
+
+      .app-main {
+        padding: 24px 5%;
+      }
+
+      .app-main section {
+        padding: 24px;
+      }
+    }
