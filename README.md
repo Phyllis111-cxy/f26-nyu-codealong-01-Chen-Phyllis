@@ -20,13 +20,33 @@ The script is linked in both `index.html` and `explore.html`. Because my project
 
 ## This week's update
 
-**Changes:** I added six activity cards with an array and loop. I kept the page links, paper colors, and illustrations. After trying extra interactions, I simplified the JavaScript to focus on this week's lesson. The Calendar is now a static October example. I removed illustrations, the welcome frame, and unfinished page links to keep the prototype focused.
+**Changes:** I added six activity cards with an array and loop. I kept the page links and paper colors. After trying extra interactions, I simplified the JavaScript to focus on this week's lesson. The Calendar is now a static October example. I removed illustrations, the welcome frame, and unfinished page links to keep the prototype focused.
 
 **Challenge:** I needed to understand the order for creating elements and placing them inside each other. The earlier version also had more JavaScript than I could comfortably explain.
 
 **My question:** How can I add a simple time filter after I understand the card-generation loop?
 
 **Next week:** I want to practice explaining the loop, then add a basic filter and continue the Collection and Map pages.
+
+## Structure Audit — November 2, 2026
+
+**Fixed today:**
+- Added the missing section inventory at the top of `index.html` and a comment for the plan-ahead choices.
+- Updated this README to separate what is already there from what I still need to build.
+
+The Welcome button already links to Explore, and Calendar already has a static October layout. These were earlier fixes, not changes I made today. Each page has one main heading, and the local links and CSS/JavaScript file references point to existing files.
+
+**Still missing (building before the layout assignment):**
+- [ ] Build the Collection and Map pages.
+- [ ] Make the time choices and Surprise Me work, and connect activities to Calendar and Collection.
+- [ ] Compare the page sections with my Assignment 4 desktop mockup at 1440px.
+- [ ] Check the font in DevTools: the CSS lists Inter, but there is no font import, so it may use a system font.
+- [ ] Finish the DevTools color, style, and Console checks, and the partner spot-check.
+
+**One thing I couldn't figure out:**
+- How can I save a completed quest so it appears in both Calendar and Collection?
+
+I checked the source code for this update. I haven't verified the browser checks or partner spot-check for this audit.
 
 ## What works now
 
@@ -40,6 +60,6 @@ The script is linked in both `index.html` and `explore.html`. Because my project
 
 ## Checking and submission
 
-I checked all five pages at mobile, tablet, and desktop widths (320, 390, 768, and 1440px). All six text cards appeared, Calendar/Explore links worked, and inactive controls did not navigate or open messages. The static Calendar also displayed with JavaScript disabled. These Chromium checks found no page/script errors; Safari and Firefox were not checked.
+Earlier Assignment 6 notes reported checks at mobile, tablet, and desktop widths (320, 390, 768, and 1440px). All six text cards appeared, Calendar/Explore links worked, and inactive controls did not navigate or open messages. The static Calendar also displayed with JavaScript disabled. Those notes reported no page/script errors in Chromium; Safari and Firefox were not checked. I have not repeated those checks for this audit.
 
 [Current repository](https://github.com/Phyllis111-cxy/f26-nyu-codealong-01-Chen-Phyllis)
