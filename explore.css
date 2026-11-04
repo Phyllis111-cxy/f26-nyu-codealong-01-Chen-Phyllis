@@ -1,3 +1,12 @@
+/* LAYOUT PLAN
+   Page shell: one centered grid column for header and main content.
+   Section grids:
+   - Explore .quest-grid: repeated activity cards.
+   - Calendar .calendar-grid: dates aligned in seven weekday columns.
+   Flexbox: header, time choices, section heading, and bottom navigation.
+   Normal flow: intro text and card text remain stacked.
+   Keep the existing 24px header spacing as the page-shell gap.
+*/
 :root{
   --brand-yellow:#FFC83D;
   --paper-bg:#F1EEE7;
@@ -42,7 +51,12 @@ button:hover{
   border:0}
 [hidden]{
   display:none!important}
+/* Page shell: one centered column keeps the header above the main content. */
 .app-shell{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:24px;
+  align-content:start;
   max-width:660px;
   margin:0 auto;
   min-height:100vh;
@@ -52,7 +66,7 @@ button:hover{
   align-items:center;
   justify-content:space-between;
   min-height:55px;
-  margin-bottom:24px}
+  margin-bottom:0}
 .wordmark{
   text-decoration:none;
   color:var(--ink);
@@ -270,6 +284,7 @@ button:hover{
   font-size:12px;
   white-space:nowrap;
   padding:6px}
+/* Explore cards: equal-width columns align activities in rows. */
 .quest-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -478,6 +493,7 @@ button:hover{
   height:59px;
   width:59px}
 }
+/* Wider screens: expand the shell and show three activity columns. */
 @media(min-width:700px){
   .app-shell{
   max-width:900px}

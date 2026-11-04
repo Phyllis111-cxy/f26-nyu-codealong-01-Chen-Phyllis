@@ -23,6 +23,7 @@
 .calendar-year{color:var(--muted);font-size:.65em;letter-spacing:-.5px}
 .month-controls{display:flex;flex:none;gap:0}
 .month-controls button{width:37px;min-height:44px;border:0;background:transparent;color:var(--ink);font-size:38px;line-height:1}
+/* Calendar: seven equal columns align weekday labels and date cells. */
 .calendar-weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
 .calendar-weekdays{font-size:clamp(9px,2.5vw,13px);color:var(--muted);padding:0 0 10px;text-align:center}
 .calendar-grid{border-top:1px solid var(--soft-border);border-left:1px solid var(--soft-border)}
