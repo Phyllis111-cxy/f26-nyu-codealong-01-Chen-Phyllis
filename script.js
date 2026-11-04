@@ -1,4 +1,17 @@
 // ASSIGNMENT 6: store project content in an array of objects.
+
+
+console.log("script.js is connected");
+// Remember which filters the user selected
+let selectedFilters = [];
+
+const soloButton = document.getElementById("solo-filter");
+
+soloButton.addEventListener("click", function() {
+  selectedFilters = ["solo"];
+  console.log(selectedFilters);
+});
+
 const quests = [
   {
     "title": "Roosevelt Island Tram",
