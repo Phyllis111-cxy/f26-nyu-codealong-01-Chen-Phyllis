@@ -1,9 +1,6 @@
 # NYC Side Quest
 
 **Phyllis Chen — Introduction to Coding for Learning Designers**
-
-**Latest mockups:** [Assignment 4 Figma Mockups](https://www.figma.com/design/MfJCpVKbzRV3SSYDU4AQB2/Phyllis-Chen-%E2%80%94-Assignment-4-%E2%80%94-NYC-Side-Quest)
-
 **Live site:** Not published yet.
 
 ## Project Log
@@ -70,13 +67,6 @@ I also used it to help debug syntax errors, understand why my activity cards wer
 The activity-filtering idea came from my NYC Side Quest design. I used AI to support my coding and learning process, not to decide what the project should do.
 
 ---
-
-## Project Overview
-
-NYC Side Quest helps people find small adventures in New York when they have free time.
-
-My newer pages have a warm paper background, yellow accents, and a transparent bottom navigation bar. Some Figma frames still show the older design.
-
 ## Previous Project Logs
 
 Assignment 6 — My Data and JavaScript
