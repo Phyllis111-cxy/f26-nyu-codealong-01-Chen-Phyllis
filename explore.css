@@ -577,3 +577,7 @@ span.time-chip{display:inline-flex;align-items:center;justify-content:center}
 [aria-disabled="true"],.calendar-day,.month-controls>span,.arrow-disc{cursor:default}
 .activity-count{font-size:12px;color:var(--muted)}
 .activity-count{white-space:nowrap}
+/* Hide activity cards that do not match the selected filters. */
+.is-hidden {
+  display: none;
+}

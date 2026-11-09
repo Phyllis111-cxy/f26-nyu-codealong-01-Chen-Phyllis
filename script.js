@@ -6,47 +6,146 @@ console.log("script.js is connected");
 let selectedFilters = [];
 
 const soloButton = document.getElementById("solo-filter");
+const freeButton = document.getElementById("free-filter");
+
 
 soloButton.addEventListener("click", function() {
-  selectedFilters = ["solo"];
+  // Check if Free is already selected.
+  if (selectedFilters.includes ("solo")){
+    // Remove Solo but keep other filters.
+  selectedFilters = selectedFilters.filter(function(item) {
+  return item !== "solo";
+  });
+  soloButton.classList.remove("is-selected")
+  } else {
+    // Add Solo without removing other filters.
+    selectedFilters.push("solo");
+    soloButton.classList.add("is-selected")
+  }
   console.log(selectedFilters);
+   // Update the activity cards after clicking Solo.
+  updateFilters();
+  const cards = document.querySelectorAll(".quest-card");
+  console.log(cards.length);
+    // Check each card against the selected filters.
+    cards.forEach(function(card) {
+      // Get the activity data from this card.
+      const quest = card.questData;
+
+      if (
+        (selectedFilters.includes("solo") && quest.solo === false) ||
+    (selectedFilters.includes("free") && quest.cost !== 0) ||
+    (selectedFilters.includes("1h") && quest.duration > 60) ||
+    (selectedFilters.includes("budget") && quest.cost >= 20)
+  ) {
+        card.classList.add("is-hidden");
+      } else {
+        card.classList.remove("is-hidden");
+      }
+    }); //End forEach.
+    // Count how many activity cards are visible.
+    const visibleCards = document.querySelectorAll(".quest-card:not(.is-hidden)");
+    // Update the number of activities on the page.
+    const activityCount = document.getElementById("activity-count");
+    activityCount.textContent = visibleCards.length + " activities";
+  }); //End click event.
+
+
+  // Change the Free filter when clicked.
+  freeButton.addEventListener("click", function() {
+    // Check if Free is already selected.
+  if (selectedFilters.includes("free")) {
+    // Remove Free but keep other filters.
+    selectedFilters = selectedFilters.filter(function(item) {
+      return item !== "free";
+    });
+    freeButton.classList.remove("is-selected");
+  } else {
+    // Add Free without removing other filters.
+    selectedFilters.push("free");
+    freeButton.classList.add("is-selected");
+  }
+
+  console.log(selectedFilters);
+  // Update the activity cards after clicking Free.
+  updateFilters();
 });
+// Check the activity cards and update the number of results.
+function updateFilters() {
+  const cards = document.querySelectorAll(".quest-card");
+  console.log(cards.length);
+    // Check each card against the selected filters.
+    cards.forEach(function(card) {
+      // Get the activity data from this card.
+      const quest = card.questData;
+
+      if (
+        (selectedFilters.includes("solo") && quest.solo === false) ||
+    (selectedFilters.includes("free") && quest.cost !== 0) ||
+    (selectedFilters.includes("1h") && quest.duration > 60) ||
+    (selectedFilters.includes("budget") && quest.cost >= 20)
+  ) {
+        card.classList.add("is-hidden");
+      } else {
+        card.classList.remove("is-hidden");
+      }
+    }); //End forEach.
+    // Count how many activity cards are visible.
+    const visibleCards = document.querySelectorAll(".quest-card:not(.is-hidden)");
+    // Update the number of activities on the page.
+    const activityCount = document.getElementById("activity-count");
+    activityCount.textContent = visibleCards.length + " activities";
+    } // End updateFilters.
+  
 
 const quests = [
   {
     "title": "Roosevelt Island Tram",
     "duration": 60,
     "category": "Scenic",
+    "solo": true, 
+    "cost": 3,
     "description": "See the city from above on the iconic red tram."
   },
   {
     "title": "Explore DUMBO",
     "duration": 120,
     "category": "Photography",
+    "solo": true,
+    "cost": 0,
     "description": "Walk beneath the Manhattan Bridge and discover picture-perfect streets."
   },
   {
     "title": "Central Park Picnic",
     "duration": 120,
     "category": "Relaxing",
+    "solo": false,
+    "cost": 15,
     "description": "Bring a snack and take a breather in the park."
   },
   {
     "title": "Chinatown Food Hunt",
     "duration": 120,
     "category": "Food",
+    "solo": true,
+    "cost": 25,
     "description": "Find dumplings, bakeries, and bright streets in Chinatown."
   },
   {
     "title": "West Village Walk",
     "duration": 60,
     "category": "Exploration",
+    "solo": true,
+    "cost": 0,
     "description": "Wander past brownstones, little shops, and leafy corners."
   },
   {
     "title": "Brooklyn Bridge Stroll",
     "duration": 180,
     "category": "Outdoor",
+    "solo": true,
+    "cost": 0,
+
     "description": "Cross the bridge for skyline views and a mini adventure."
   }
 ];
@@ -58,9 +157,11 @@ const container = document.getElementById("quest-container");
 if (container) {
   // Repeat these steps for each activity.
   quests.forEach(function (quest) {
+    
     // 1. Create the card and its content.
     const card = document.createElement("article");
     card.className = "quest-card";
+    card.questData = quest;
     const category = document.createElement("span");
     category.className = "category-sticker";
     category.textContent = quest.category;
