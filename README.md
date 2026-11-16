@@ -5,6 +5,22 @@
 
 ## Project Log
 
+### Week 9 — November 16, 2026
+
+**Render Plan**
+
+- **User story:** As a student in NYC, I want to filter activities based on my preferences so that I can quickly find something that fits my time, budget, and plans.
+
+- **State:** My page uses a `selectedFilters` array to remember which filters the user has selected. It starts empty, which means all six Quest cards are shown.
+
+- **What changes it:** When the user clicks a filter button, such as Solo, Free, 1h, or Under $20, that filter is added to or removed from `selectedFilters`. Clicking All clears the selected filters.
+
+- **What render() draws:** The `render()` function will rebuild the Quest cards on my Explore page using the array I created in Assignment 6. It will display only the cards that match the current filters.
+
+- **The if inside the loop:** For each Quest in the array, an `if` statement will check whether it matches the selected filters. If it matches all active filters, the card will be displayed. Otherwise, it will be skipped.
+
+- **What else render() works out:** The function will also update the number of visible Quests, highlight the selected filter buttons, and display a message when no activities match the filters.
+
 ### Week 8 — November 8, 2026
 
 **State Plan**
