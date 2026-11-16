@@ -21,6 +21,38 @@
 
 - **What else render() works out:** The function will also update the number of visible Quests, highlight the selected filter buttons, and display a message when no activities match the filters.
 
+**What changed:**
+
+I moved the Quest card creation from a one-time loop into `render()`. The function now uses `selectedFilters` to decide which cards to draw, counts the cards it drew, updates the selected buttons, and controls the no-results message. I also connected the 1h, Under $20, and All buttons.
+
+**Patching vs. rendering:**
+
+Before this week, my click handlers changed button classes and hid cards that were already on the page. Now a click changes `selectedFilters` and calls `render()`, which clears the old cards and draws the matching cards, count, and button styles from the current state. The same function also draws the starting page.
+
+**What was hard, and what I tried:**
+
+It was hard to tell which Assignment 8 code to keep when moving the page updates into `render()`. I kept the array of Quests and the `push()` and `filter()` state changes, then removed the repeated card checks from the Solo handler and the old `updateFilters()` function. I used `if/else` and `classList.add()` / `classList.remove()` for the button styles because those are the methods I have practiced. I also kept the Explore-only check because the home page loads the same script but does not have filter buttons.
+
+**What happened when I tried to break it:**
+
+I checked the saved JavaScript against a simulated page. With no filters, it drew 6 cards and showed “6 activities.” Solo showed 5, Free showed 3, Solo and Free together showed 3, 1h showed 2, and Under $20 showed 5. Clicking Solo ten times returned to 6 cards with All selected; the count matched the cards in each check. In a separate zero-item check, the count became 0 and the no-results message appeared. I also confirmed these results in the browser and checked the Console on every page; I found no errors.
+
+**What I learned or changed my mind about:**
+
+I learned that the array and selected filters can be the source for the whole activity section, rather than changing individual cards after each click. Clearing and rebuilding the cards inside `render()` also keeps the count and button styles in agreement with the current filters.
+
+**Question for Joey:**
+
+Is rebuilding all six cards on every filter click a good approach for this project, or should I use a different method when the Quest list gets much larger?
+
+**Next week's goal:**
+
+I want to decide what the More button should do and continue building Calendar and Collection.
+
+**AI use:**
+
+I used ChatGPT to help me plan where to move my existing card code, understand what the `render()` code does and how to combine it with my code, and review the changes one step at a time.
+
 ### Week 8 — November 8, 2026
 
 **State Plan**
