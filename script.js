@@ -5,6 +5,8 @@ console.log("script.js is connected");
 // Remember which filters the user selected
 let selectedFilters = [];
 
+let searchText = "";
+
 const soloButton = document.getElementById("solo-filter");
 const freeButton = document.getElementById("free-filter");
 // Find the Quest card container. It exists on Explore, but not on the home page.
@@ -21,7 +23,8 @@ const allButton = document.getElementById("all-filter");
 const searchInput = document.getElementById("quest-search");
 
 searchInput.addEventListener("input", function(event) {
-  console.log(event.target.value);
+  searchText = event.target.value;
+render();
 });
 
 soloButton.addEventListener("click", function() {
