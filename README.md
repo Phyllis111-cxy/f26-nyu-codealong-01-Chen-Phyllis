@@ -5,6 +5,31 @@
 
 ## Project Log
 
+### Week 10 — November 22, 2026
+
+**Event Plan**
+
+- **User story:** As a student in NYC, I want to search activities by keyword so that I can quickly find an adventure that interests me.
+- **The event:** An `input` event on a labeled search box on the Explore page. It fits because the activity results can update as the user types.
+- **State:** A new `searchText` variable remembers what the user typed. It starts as an empty string, so the existing filters can show all matching activities before anyone searches. The existing `selectedFilters` array continues to remember which filter buttons are selected.
+- **My function:** `matchesSearch(quest)` asks whether one Quest's title or description contains the search text. It takes one Quest object as a parameter and returns `true` or `false`. `render()` will use that answer along with the existing filters to decide whether to draw each card.
+
+**What changed:**
+
+**Why redraw on every event:**
+
+**What was hard, and what I tried:**
+
+**What happened when I tried to break it:**
+
+**What I learned or changed my mind about:**
+
+**Question for Joey:**
+
+**Next week's goal:**
+
+**AI use:**
+
 ### Week 9 — November 16, 2026
 
 **Render Plan**
