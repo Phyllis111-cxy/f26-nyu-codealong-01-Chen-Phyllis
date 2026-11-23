@@ -16,19 +16,35 @@
 
 **What changed:**
 
+I added a labeled search box to the Explore page. An `input` event saves what the user types in `searchText` and calls `render()`. The `matchesSearch(quest)` function checks each Quest's title and description, and `render()` uses its answer along with the existing filters to draw the matching cards and activity count. I also updated the no-results message to suggest trying another word or removing a filter.
+
 **Why redraw on every event:**
+
+The search text changes each time the user types or deletes a character. Calling `render()` makes the cards, activity count, and no-results message agree with the current search text and selected filters. The event handler only changes the state and calls `render()`; it does not change the page directly.
 
 **What was hard, and what I tried:**
 
+At first, I could not see the search box because I had opened a different HTML page in Live Server. I opened `explore.html` and found it under Quick Filter. I also located the existing filter checks inside `render()` so I could add the search check without replacing the Week 9 filters.
+
 **What happened when I tried to break it:**
+
+With an empty search box and no filters, all 6 activities appeared. Searching `park` showed only Central Park Picnic and a count of 1; `PARK` gave the same result. Clearing the search box restored all 6 activities. Searching `zzzz` showed 0 activities and a message suggesting what to try next. Searching `park` and selecting Solo showed 0 activities; removing Solo restored Central Park Picnic. With Free selected, 3 activities appeared, and searching `bridge` narrowed them to 2. After typing quickly and deleting everything, all 6 activities returned and the count matched the cards.
 
 **What I learned or changed my mind about:**
 
+I learned that the same `render()` function can use both the existing button filters and the new search text. The `matchesSearch(quest)` function answers one question for each activity, while `render()` decides what to show.
+
 **Question for Joey:**
+
+Is searching both the title and description a good choice for this project, or would searching categories too make the results more useful?
 
 **Next week's goal:**
 
+I want to improve the search box's appearance and decide what the More filter button should do.
+
 **AI use:**
+
+I used ChatGPT to identify where to add the HTML and JavaScript and understand how the input event, state, function, and `render()` work together. I added the code in VS Code and tested the search and filter combinations in the browser.
 
 ### Week 9 — November 16, 2026
 
