@@ -17,6 +17,12 @@ const emptyMessage = document.getElementById("empty-message");
 const hourButton = document.getElementById("hour-filter");
 const budgetButton = document.getElementById("budget-filter");
 const allButton = document.getElementById("all-filter");
+// Week 10: Read what the user types in the activity search box.
+const searchInput = document.getElementById("quest-search");
+
+searchInput.addEventListener("input", function(event) {
+  console.log(event.target.value);
+});
 
 soloButton.addEventListener("click", function() {
   // Check if Solo is already selected.
