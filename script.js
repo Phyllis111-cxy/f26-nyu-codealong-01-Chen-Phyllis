@@ -92,6 +92,11 @@ allButton.addEventListener("click", function () {
   render();
 });
 
+// Does this Quest's title or description contain the search text? Returns true or false.
+function matchesSearch(quest) {
+  const text = (quest.title + " " + quest.description).toLowerCase();
+  return text.includes(searchText.toLowerCase());
+}
 // render: draws Quest cards, the count, and selected buttons from selectedFilters.
 function render() {
   // Clear the old cards so they are not added twice.
@@ -115,7 +120,10 @@ function render() {
     if (selectedFilters.includes("budget") && quest.cost >= 20) {
       matches = false;
     }
-
+    // Hide this Quest if it does not match the search text.
+    if (matchesSearch(quest) === false) {
+    matches = false;
+    }
     // Build a card only when this Quest matches all selected filters.
     if (matches === true) {
       const card = document.createElement("article");
